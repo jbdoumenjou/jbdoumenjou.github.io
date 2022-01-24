@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Blog de JB">
 <meta itemprop=name content="C'est l'histoire d'un blog">
 <meta itemprop=description content="De flemme en motivation">
-<meta itemprop=wordCount content="791">
+<meta itemprop=wordCount content="792">
 <meta itemprop=keywords content="cms,golang,hugo,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="C'est l'histoire d'un blog">
 <meta name=twitter:description content="De flemme en motivation">
@@ -79,7 +79,7 @@ ARTICLES
 Il est en ce monde bien des sujets qui peuvent être abordés avec plus ou moins de succès.</p>
 <p>J&rsquo;avoue, un peu honteusement, qu&rsquo;il ne s&rsquo;agit que d&rsquo;un morceau de jardin secret, ou plutôt un potager partagé.
 En effet, pour peu que le cœur t&rsquo;en dise,
-j&rsquo;aimerai planter des graines,
+j&rsquo;aimerais planter des graines,
 faire germer des idées en partageant avec toi quelques-unes de mes expérimentations, de mes pensées.</p>
 <p>Tout voyage commence par un premier pas, partons donc simplement par la création même de ce coin de lecture.
 Si tu me permets une petite digression, dont j&rsquo;ai peur d&rsquo;être trop friand,
@@ -92,33 +92,33 @@ Cependant, une voix insistante me susurrait dans l&rsquo;oreille : &ldquo;un peu
 <p>Puis vint la motivation.
 Il me fallait quelque chose de suffisamment technique pour être amusant,
 simple pour ne pas y perdre trop de temps et gratuit pour ne pas y perdre trop d&rsquo;argent.
-Développeur de profession, je fis un rapprochement d&rsquo;idées : puis-je gérer le blog comme je gère du code.
+Développeur de profession, je fis un rapprochement d&rsquo;idées : puis-je gérer le blog comme je gère du code ?
 Je m&rsquo;impose deux contraintes, garder le gestionnaire de sources et utiliser des technologies connues.
-En somme, j&rsquo;aimerai utiliser <a href=https://git-scm.com/>Git</a> et <a href=https://github.com/>github</a>,
+En somme, j&rsquo;aimerais utiliser <a href=https://git-scm.com/>Git</a> et <a href=https://github.com/>github</a>,
 et trouver un <a href=https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_contenu>SGC</a> en <a href=https://go.dev/>Go</a>.</p>
 <p>Bref, j&rsquo;ai choisi sans trop de surprise <a href=https://gohugo.io/>Hugo</a>.
-C&rsquo;est un outil <a href=https://github.com/gohugoio/hugo>open source</a> écrit en <a href=https://go.dev/>Go</a> qui permet de générer des sites statiques.
-Ça n&rsquo;a l&rsquo;air de n&rsquo;être qu&rsquo;un détail, mais il faudra un jour que je te parle du monde de l'<a href=https://fr.wikipedia.org/wiki/Open_source>open source</a>,
+C&rsquo;est un outil <a href=https://github.com/gohugoio/hugo>open source</a> écrit en Go qui permet de générer des sites statiques.
+Ça n&rsquo;a l&rsquo;air de n&rsquo;être qu&rsquo;un détail, mais il faudra un jour que je te parle du monde de l&rsquo;Open Source,
 à la fois fabuleux et inquiétant, ouvert et impitoyable, ce sera l&rsquo;objet d&rsquo;une prochaine ballade.</p>
 <p>Revenons à nos moutons, mais pour mieux comprendre la suite de notre voyage,
-il faut que je t&rsquo;éclaire sur le fonctionnement d'<a href=https://gohugo.io/>Hugo</a>.
+il faut que je t&rsquo;éclaire sur le fonctionnement d&rsquo;Hugo.
 Il s&rsquo;agit d&rsquo;un outil qui va prendre du contenu écrit en <a href=https://fr.wikipedia.org/wiki/Markdown>markdown</a>,
 utiliser un <a href=https://gohugo.io/templates/>modèle</a> pour transformer tout ça en un site tout beau tout propre.
-Tu l&rsquo;auras compris, <a href=https://gohugo.io/>Hugo</a> te fourni à la fois une base structurelle à personnaliser
+Tu l&rsquo;auras compris, Hugo te fourni à la fois une base structurelle à personnaliser
 et des outils de générations pour te mener au but ultime : la publication de ton site.</p>
 <p>C&rsquo;est bien joli tout ça, me diras-tu, mais du coup, comment et où le publie-t-on ce Blog ?
-Effectivement, je peux stocker le contenu et la structure du site dans un dépôt <a href=https://github.com/>Github</a>,
+Effectivement, je peux stocker le contenu et la structure du site dans un dépôt Github,
 mais où vais-je donc le publier ?
-Il se trouve que <a href=https://github.com/>Github</a> propose d&rsquo;héberger des pages static via <a href=https://pages.github.com/>Github Pages</a>.</p>
-<p>Je te vois venir, et tu as raison, je ne peux (décemment) pas mettre le contenu du projet Hugo dans le dépôt de <a href=https://pages.github.com/>Github Pages</a>.
+Il se trouve que Github propose d&rsquo;héberger des pages statiques via <a href=https://pages.github.com/>Github Pages</a>.</p>
+<p>Je te vois venir, et tu as raison, je ne peux (décemment) pas mettre le contenu du projet Hugo dans le dépôt de Github Pages.
 La brique qui nous manque pour résoudre ce puzzle peut être fournie par une <a href=https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue>intégration continue</a>.
 Il s&rsquo;avère, que <a href=https://docs.github.com/en/actions>Github Actions</a> répond à ces attentes.</p>
 <p>Bien, j&rsquo;ai un dépôt d&rsquo;édition/génération et un dépôt de publication.
 Voyons comment je peux me dépatouiller de ce schmilblick.
-Sur le dépôt de publication, j&rsquo;active les <a href=https://docs.github.com/en/actions>Github Actions</a> et je définis leurs comportements directement dans le dépôt concerné.
+Sur le dépôt de publication, j&rsquo;active les Github Actions et je définis leurs comportements directement dans le dépôt concerné.
 En utilisant leurs superpouvoirs, je dois <a href=https://github.com/actions/checkout>téléporter les sources</a>,
 récupérer les <a href=https://github.com/peaceiris/actions-hugo>outils nécessaires</a> à la génération,
-transmuter la matière en site et <a href=https://github.com/peaceiris/actions-gh-pages>déployer</a> pour <a href=https://pages.github.com/>Github Pages</a>.
+transmuter la matière en site et <a href=https://github.com/peaceiris/actions-gh-pages>déployer</a> pour Github Pages.
 Toutes ces incantations sont lisibles dans le <a href=https://github.com/jbdoumenjou/myblog/blob/main/.github/workflows/gh-pages.yml>grimoire</a> du site.</p>
 <p>Si la curiosité t&rsquo;a poussée à lire les incantations de ce site, tu as pu détecter un peu de mysticisme, le mot de pouvoir <code>secrets.GH_TOKEN</code>.
 De ta personne, tu devras l&rsquo;imprégner afin que le sort n&rsquo;agisse que pour toi, pour ce faire,
@@ -138,7 +138,7 @@ il manque la possibilité de faire des commentaires et bien d&rsquo;autres chose
 Il s&rsquo;agit tout de même d&rsquo;une étape suffisante pour commencer à partager avec toi,
 et d&rsquo;ouvrir la voie pour de fabuleuses aventures (ou de petits égarements).</p>
 <p>Je te laisse ici, en espérant te revoir bientôt !
-Que les vents te soient favorable.</p>
+Que les vents te soient favorables.</p>
 <ul class=pa0>
 <li class=list>
 <a href=/fr/tags/cms class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cms</a>
